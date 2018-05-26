@@ -1,0 +1,11 @@
+.btn-width{
+	width: 20vh;
+}
+.error{
+	color:red;
+	font-weight: bold;
+}
+::placeholder { /* Chrome/Opera/Safari */
+  color: #ccc !important;
+  opacity: 1;
+}
