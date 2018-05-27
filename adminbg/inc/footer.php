@@ -13,6 +13,7 @@
 <script src="js/category.js"></script>
 <script src="js/user.js"></script>
 <script src="js/blog.js"></script>
+<script src="magnific/jquery.magnific-popup.min.js"></script>
 <script src="js/jquery.dcjqaccordion.2.7.js"></script>
 <script src="js/scripts.js"></script>
 <script src="js/jquery.slimscroll.js"></script>

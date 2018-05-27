@@ -52,7 +52,12 @@
           <tr data-expanded="true">
             <td class="col-md-2"><?php echo $i++;?></td>
             <td class="col-md-3"><?php echo $value['email'];?></td>
-            <td><img src="<?php echo $value['image'];?>" width="150px" height="50px"></td>
+              <td>
+                <a href="<?php echo $value['image'];?>" class="test-popup-link">
+                  image
+                <!-- <img src="" width="100px" height="50px"> -->
+                </a>
+              </td>
             <td class="col-md-2"><?php echo $value['created_at'];?></td>
             <td class="col-md-3">
               <?php

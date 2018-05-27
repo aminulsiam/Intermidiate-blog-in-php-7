@@ -13,9 +13,9 @@
 	 				status:status
 		 		},
 		 		success : function(data){
-		 			$('.userDeactive').text('active');
-		 			$('.userDeactive').addClass('userActive btn-success');
-	 				$('.userDeactive').removeClass('userDeactive btn-danger');
+		 			$('.userDeactive'+id).text('active');
+		 			$('.userDeactive'+id).addClass('userActive btn-success');
+	 				$('.userDeactive'+id).removeClass('userDeactive btn-danger');
 		 		} 
 
 		 	});
@@ -31,13 +31,25 @@
 	 				status:status
 		 		},
 		 		success : function(data){
-		 			$('.userActive').text('deactive');
-		 			$('.userActive').addClass('userDeactive btn-danger');
-	 				$('.userActive').removeClass('userActive btn-success');
+		 			$('.userActive'+id).text('deactive');
+		 			$('.userActive'+id).addClass('userDeactive btn-danger');
+	 				$('.userActive'+id).removeClass('userActive btn-success');
 		 		} 
 
 		 	});
 	 	});
+
+	 	// user image pop up
+	 	$('.test-popup-link').magnificPopup({
+		  type: 'image',
+		});
+
+
+
+
+
+
+
 	 });
 
 
