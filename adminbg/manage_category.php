@@ -57,7 +57,7 @@
           <?php } ?>
         </tbody>
       </table>
-      <h3 class="text-success">
+      <h3 class="text-success text-center">
       	<?php 
       		if(isset($_SESSION['msg'])){ 
       			echo $_SESSION['msg'];

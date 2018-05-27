@@ -22,7 +22,7 @@
 		<div class="table-agile-info">
  <div class="panel panel-default">
     <div class="panel-heading">
-     <h3>Manage All <strong class="text-info"><?php echo $category;?></strong> Blog</h3>
+     Manage all <strong class="text-info"><?php echo $category;?></strong> category blog
     </div>
    <div id="delete"></div>
     <div>

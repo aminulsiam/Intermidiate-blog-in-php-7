@@ -16,8 +16,6 @@
     			<section class="wrapper">
             <div class="">
             <!-- page start-->
-           
-            
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -56,7 +54,7 @@
                   </table>
                 </div>
               
-                              
+                  
                             </div>
                         </div>
                     </section>

@@ -42,10 +42,13 @@
         <thead>
           <tr>
             <th>Sl No.</th>
-            <th>Email</th>
-            <th data-breakpoints="xs">User Image</th>
-            <th data-breakpoints="xs sm md" data-title="DOB">Created time</th>
-            <th>Action</th>
+            <th>Author</th>
+            <th>Blog title</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th data-breakpoints="xs sm md" data-title="DOB">Time</th>
+            <th data-breakpoints="xs">Image</th>
+            <th>Caption</th>
           </tr>
         </thead>
         
@@ -55,11 +58,23 @@
             while( $value = $result->fetch(PDO::FETCH_ASSOC)){
           ?>
           <tr data-expanded="true">
-            <td class="col-md-2"><?php echo $i++;?></td>
-            <td class="col-md-3"><?php echo $value['blog_title'];?></td>
-            <td class="col-md-3"><?php echo $value['blog_description'];?></td>
-            <td class="col-md-3"><?php echo $value['created_at'];?></td>
-            <td><img src="<?php echo $value['image'];?>" width="150px" height="50px"></td>
+            <td class="col-md-1"><?php echo $i++;?></td>
+            <td class="col-md-1"><?php echo $value['blog_author'];?></td>
+            <td class="col-md-2"><?php echo $value['blog_title'];?></td>
+            <td class="col-md-4"><?php echo $value['blog_description'];?></td>
+            <td class="col-md-1">
+              <?php 
+                if($value['status'] == 1){
+                  echo "Published";
+                }else{
+                  echo "Unpublished";
+                }
+              ?>
+            </td>
+            <td class="col-md-1"><?php echo $value['created_at'];?></td>
+            <td>
+              <a href="<?php echo $value['image'];?>" class="test-popup-link">image</a>
+            </td>
             <td class="col-md-2"><?php echo $value['image_caption'];?></td>
           </tr>
           <?php }?>
