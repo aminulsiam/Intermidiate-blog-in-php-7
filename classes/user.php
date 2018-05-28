@@ -6,11 +6,9 @@
 	require_once '../db/db.php';
 	require_once '../vendor/autoload.php';
 	use Carbon\Carbon;
-	
 
 	class User extends DB
 	{
-
 		// user image function
 		public function userImage()
 		{
@@ -66,19 +64,6 @@
 				die("wrong cretentials");
 			}
 		}
+		
 
-		// user logout 
-		public function userLogout()
-		{
-			unset($_SESSION['username']);
-			unset($_SESSION['id']);
-			unset($_SESSION['image']);
-			header('location:login/login.php');
-		}
-
-
-	
-
-
-
-	}
+	}//end class block

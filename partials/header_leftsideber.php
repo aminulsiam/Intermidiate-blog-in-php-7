@@ -1,10 +1,8 @@
 <?php
 	session_start();
-	//require_once './classes/user.php';
-	//$user = new User;
-	if(isset($_GET['logout'])){
-		$user->userLogout();
-	}
+    require "classes/Fcategory.php";
+    $category = new Fcategory;
+    $result = $category->selectCategory();
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -58,11 +56,28 @@
                </div>
                 <div class="top-nav">
                     <ul>
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="contact.php">Contact</a></li>
+                        <?php 
+                            while($value = $result->fetch(PDO::FETCH_ASSOC)){
+                        ?>
+                        <li class="text-center">
+                            <a href="?category=<?php echo $value['category'];?>">
+                                <?php echo $value['category'];?>
+                            </a>
+                        </li>
+                        <?php }  //end while ?> 
                     </ul>
                 </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
