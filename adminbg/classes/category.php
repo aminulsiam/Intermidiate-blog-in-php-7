@@ -16,7 +16,7 @@
 		// SAVE CATEGORY 
 		public function saveCategory($data)
 		{
-			$category = $this->db->validation($data['category']);
+			$category = $data['category'];
 			$query = "INSERT INTO tbl_category(category) VALUES ('$category')";
 			$msg = $this->db->insert($query);
 			return $msg;

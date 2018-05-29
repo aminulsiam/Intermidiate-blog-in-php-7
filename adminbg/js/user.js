@@ -13,11 +13,11 @@
 	 				status:status
 		 		},
 		 		success : function(data){
-		 			$('.userDeactive'+id).text('active');
-		 			$('.userDeactive'+id).addClass('userActive btn-success');
-	 				$('.userDeactive'+id).removeClass('userDeactive btn-danger');
+		 			$('#row_'+id+' .userDeactive').text('active');
+		 			$('#row_'+id+' .userDeactive').addClass('userActive btn-success');
+	 				$('#row_'+id+' .userDeactive').removeClass('userDeactive btn-danger');
 		 		} 
-
+		 		//not working 
 		 	});
 	 	});
 	 	$('tbody').on("click",".userActive",function(){
@@ -31,13 +31,14 @@
 	 				status:status
 		 		},
 		 		success : function(data){
-		 			$('.userActive'+id).text('deactive');
-		 			$('.userActive'+id).addClass('userDeactive btn-danger');
-	 				$('.userActive'+id).removeClass('userActive btn-success');
+		 			$('#row_'+id+' .userActive').text('deactive');
+		 			$('#row_'+id+' .userActive').addClass('userDeactive btn-danger');
+	 				$('#row_'+id+' .userActive').removeClass('userActive btn-success');
 		 		} 
 
 		 	});
 	 	});
+
 
 	 	// user image pop up
 	 	$('.test-popup-link').magnificPopup({

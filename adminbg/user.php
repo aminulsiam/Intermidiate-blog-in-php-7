@@ -49,7 +49,7 @@
             $i = 1;
             while( $value = $result->fetch(PDO::FETCH_ASSOC)){
           ?>
-          <tr data-expanded="true">
+          <tr data-expanded="true" id="row_<?php echo $value['id'];?>">
             <td class="col-md-2"><?php echo $i++;?></td>
             <td class="col-md-3"><?php echo $value['email'];?></td>
               <td>

@@ -73,7 +73,7 @@
 		// data validation
 		public function validation($data) 
 		{
-		  $data   = trim($data);
+		  //$data   = trim($data);
 		  $string = str_replace(' ',' ', $data); // Replaces all spaces with hyphens.
    		  $data   = preg_replace('/[^A-Za-z0-9\. -]/','', $string); // Removes special chars.
    		  //$data   = mysqli_real_escape_string(self::$connect,$data);

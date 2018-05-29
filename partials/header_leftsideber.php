@@ -59,7 +59,7 @@
                         <?php 
                             while($value = $result->fetch(PDO::FETCH_ASSOC)){
                         ?>
-                        <li class="text-center">
+                        <li class="category_li">
                             <a href="?category=<?php echo $value['category'];?>">
                                 <?php echo $value['category'];?>
                             </a>
