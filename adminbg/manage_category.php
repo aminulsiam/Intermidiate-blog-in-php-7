@@ -18,7 +18,7 @@
 		<div class="table-agile-info">
  <div class="panel panel-default">
     <div class="panel-heading">
-     <h3><strong>Manage Category</strong></h3>
+     <strong>Manage Category</strong>
     </div>
    <div id="delete"></div>
     <div>
@@ -69,8 +69,6 @@
   </div>
 </div>
 </section>
-
-
 
          <!-- footer -->
             <?php include 'inc/footer.php';?>		  

@@ -27,10 +27,10 @@
 		function deleteCategory(id)
 		{
 			var id = id;
-			swalDelete(id);
+			swalDeleteCategory(id);
 		}
 
-		function swalDelete(id)
+		function swalDeleteCategory(id) 
 		{
 			swal({
 				  title: "Are you sure?",
@@ -41,6 +41,7 @@
 				})
 				.then((willDelete) => {
 				  if (willDelete) {
+				  	//console.log("working ");
 				     $.ajax({
 						url     : "check/delete_category.php",
 						method  : "POST",

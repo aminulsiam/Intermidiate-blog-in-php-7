@@ -2,6 +2,7 @@
 
 	 // user active and deactive 
 	 $(document).ready(function(){
+
 	 	$('tbody').on("click",".userDeactive",function(){
 	 		var id = $(this).attr('id');
 		 	var status = 0;
