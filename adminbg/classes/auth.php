@@ -35,9 +35,9 @@
 		// admin logout
 		public function logout()
 		{
-			unset($_SESSION['username']);
-	        unset($_SESSION['id']);
-	        header('location:index.php');
+		  unset($_SESSION['username']);
+	          unset($_SESSION['id']);
+	          header('location:index.php');
 		}
 
 
