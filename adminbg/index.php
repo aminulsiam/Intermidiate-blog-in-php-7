@@ -7,6 +7,9 @@
   } 
 
   require_once 'classes/auth.php';
+
+  use Auth\Auth;
+
   $auth = new Auth;
   if($_SERVER['REQUEST_METHOD']=='POST'){
     $auth->adminLogin($_POST);

@@ -1,5 +1,8 @@
 <?php
   require_once 'classes/user.php';
+
+  use User\User;
+
   $user = new User;
   $result = $user->selectUser();
 

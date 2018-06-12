@@ -1,18 +1,21 @@
 <?php
+	namespace Category\Frontend;
+
 	/**
 	* Frondted category class
 	*/
+
 	require_once './db/db.php';
 	require_once './vendor/autoload.php';
 	use Carbon\Carbon;
 
-	class Fcategory
+	class Category
 	{
 		private $db;
 		
 		function __construct()
 		{
-			$this->db = new DB;
+			$this->db = new \DB;
 		}
 
 		// select category in fronted leftsideber

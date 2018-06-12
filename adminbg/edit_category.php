@@ -1,5 +1,8 @@
 <?php
 	require_once 'classes/category.php';
+
+    use Category\Category;
+
 	$category = new Category;
 	
 	// SELECT CATEGORY

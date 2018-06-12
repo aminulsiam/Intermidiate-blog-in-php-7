@@ -1,5 +1,8 @@
 <?php
 	require_once 'classes/blog.php';
+
+    use Blog\Blog;
+
 	$blog = new Blog;
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$msg = $blog->saveBlog($_POST);

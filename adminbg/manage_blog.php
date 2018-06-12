@@ -1,5 +1,8 @@
 <?php
   require_once 'classes/blog.php';
+
+  use Blog\Blog;
+  
   $blog = new Blog;
   if(isset($_GET['category'])){
     $category = $_GET['category'];

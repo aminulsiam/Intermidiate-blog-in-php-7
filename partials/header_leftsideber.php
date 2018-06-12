@@ -1,7 +1,10 @@
 <?php
 	session_start();
     require "classes/Fcategory.php";
-    $category = new Fcategory;
+
+    use Category\Frontend\Category;
+
+    $category = new Category;
     $result = $category->selectCategory();
 ?>
 <!DOCTYPE HTML>

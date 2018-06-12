@@ -1,4 +1,5 @@
 <?php
+    namespace User;
     /**
      *  user class
      */
@@ -14,7 +15,7 @@
 
         public function __construct() 
         {
-            $this->db = new DB;
+            $this->db = new \DB;
         }
 
         // select all user for admin

@@ -1,4 +1,5 @@
 <?php
+	namespace Blog;
 	/**
 	* ==========  BLOG CLASS
 	*/
@@ -9,13 +10,13 @@
 	define("BEGIN", "BEGIN");
 	define("COMMIT","COMMIT");
 
-	class Blog extends DB
+	class Blog
 	{
 		private $db;
 
 		public function __construct()
 		{
-			$this->db = new DB;
+			$this->db = new \DB;
 		}
 		// SAVE BLOG
 		public function saveBlog($data)
@@ -29,7 +30,7 @@
 			$caption     = $this->db->validation($data['image_caption']);
 			$created_at  = Carbon::now();
 			BEGIN;
-		    $query = "INSERT INTO tbl_blog(                                  category_id,blog_title,blog_author,blog_description,status,created_at) VALUES ('$category','$blog_title','$author','$description','$blog_status','$created_at');
+		    $query = "INSERT INTO tbl_blog(category_id,blog_title,blog_author,blog_description,status,created_at) VALUES ('$category','$blog_title','$author','$description','$blog_status','$created_at');
 					INSERT INTO tbl_image(image,image_caption,blog_id) VALUES ('$blog_image','$caption',LAST_INSERT_ID())";
 			COMMIT;
 			$msg = $this->db->insert($query);

@@ -1,7 +1,9 @@
 <?php
   require_once 'classes/blog.php';
-  $blog = new Blog;
 
+  use Blog\Blog;
+
+  $blog = new Blog;
   if(isset($_GET['id'])){
     $id = $_GET['id'];
     $result = $blog->selectBlogById($id);  

@@ -1,5 +1,5 @@
 <?php
-	//namespace Category;
+	namespace Category;
 
 	require_once '../db/db.php';
 	/**
@@ -10,7 +10,7 @@
 		private $db;
 
 		public function __construct(){
-			$this->db=new DB;
+			$this->db = new \DB;
 		}
 
 		// SAVE CATEGORY 
@@ -50,5 +50,4 @@
 		}
 
 
-	}
-?>
+	} //class end

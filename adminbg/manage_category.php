@@ -1,6 +1,9 @@
 <?php
   require_once 'classes/category.php';
-  $category = new Category;
+
+  use Category\Category;
+  
+  $category = new Category();
   $result = $category->selectAllCategory();
 ?>
     <!--header start-->

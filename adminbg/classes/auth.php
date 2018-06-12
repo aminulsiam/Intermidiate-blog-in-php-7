@@ -1,4 +1,5 @@
 <?php
+	namespace Auth;
 	/**
 	*  Auth class 
 	*/
@@ -10,7 +11,7 @@
 
 		public function __construct()
 		{
-			$this->db = new DB;
+			$this->db = new \DB;
 		}
 
 		// admin login 

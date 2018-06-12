@@ -1,5 +1,8 @@
 <?php
 	require_once 'classes/category.php';
+
+    use Category\Category;
+
 	$category = new Category;
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		$msg = $category->saveCategory($_POST);
