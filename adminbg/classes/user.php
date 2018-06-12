@@ -1,27 +1,25 @@
 <?php
+    /**
+     *  user class
+     */
+    require_once '../db/db.php';
+    require_once '../vendor/autoload.php';
 
-/**
- *  user class
- */
-require_once '../db/db.php';
-require_once '../vendor/autoload.php';
+    use Carbon\Carbon;
 
-use Carbon\Carbon;
+    class User 
+    {
 
-class User extends DB {
+        private $db;
 
-    private $db;
+        public function __construct() {
+            $this->db = new DB;
+        }
 
-    public function __construct() {
-        $this->db = new DB;
-    }
+        // select all user for admin
+        public function selectUser() {
+            $query = "SELECT id,email,image,created_at,status FROM tbl_user ORDER BY id DESC";
+            return $this->db->select($query);
+        }
 
-    // select all user for admin
-    public function selectUser() {
-        $query = "SELECT id,email,image,created_at,status FROM tbl_user ORDER BY id DESC";
-        return $this->db->select($query);
-    }
-
-}
-
-?>
+    }//end class 
