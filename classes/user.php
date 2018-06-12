@@ -7,8 +7,14 @@
 	require_once '../vendor/autoload.php';
 	use Carbon\Carbon;
 
-	class User extends DB
+	class User
 	{
+		private $db;
+		public function __construct()
+		{
+			$this->db = new DB;
+		}
+
 		// user image function
 		public function userImage()
 		{
@@ -30,8 +36,8 @@
 		// Registration user information
 		public function saveUser($data)
 		{
-			$username = $this->validation($data['username']);
-			$password = $this->validation(md5($data['password']));
+			$username = $this->db->validation($data['username']);
+			$password = $this->db->validation(md5($data['password']));
 			$email    = $data['email'];
 			$picture  = $this->userImage();
 			$created  = Carbon::now();
