@@ -18,8 +18,8 @@
 		// user image function
 		public function userImage()
 		{
-			// usage 3rd party pakages
-	        $image = new Bulletproof\Image($_FILES);
+		// usage 3rd party pakages
+	            $image = new Bulletproof\Image($_FILES);
 		    $image->setLocation('../images');
 		    $image->setDimension(600, 400);
 		    if($image["image"]){
