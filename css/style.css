@@ -320,7 +320,7 @@ body{
 	width: auto;
 	height: auto;
 	padding: 2%;
-	background-color: #ea4c89;
+	background-color: none;
 	font-weight: bold;
 	text-align: center;
 	clear: both;
@@ -328,7 +328,7 @@ body{
 .footer p{
 	font-size: 1em;
 	font-family: 'Merriweather Sans', sans-serif;
-	color: #fff;
+	color: #ea4c89;
 }
 .footer p a{
 	color:#000;

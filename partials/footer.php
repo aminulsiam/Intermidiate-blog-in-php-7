@@ -1,6 +1,6 @@
 				<div class="clear"> </div>
 	                <div class="footer">
-	                    <p>&#169 2013 Feedlive . All Rights Reserved | Design By <a href="http://w3layouts.com/">W3Layouts</a></p>
+	                    <p>&#169 2013 myBlog | Design & Developed By <a href="">Md.Aminul Haq Mallik</a></p>
 	                </div>
                 <div class="clear"> </div>
         </div>
