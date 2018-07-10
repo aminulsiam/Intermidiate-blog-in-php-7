@@ -123,15 +123,17 @@ body{
 	display: inline-block;
 }
 .grid-header ul li a{
-	color:#ea4c89;
+	color: #ea4c89;
 	font-size:0.8em;
 	font-family: 'Merriweather Sans', sans-serif;
+	font-weight: bold;
 	-webkit-transition: all .5s;
 	-moz-transition: all .5s;
 	-o-transition: all .5s;
 	-ms-transition: all .5s;
 	transition: all .5s;
 }
+
 .grid-header ul li a:hover,.content-pagenation li a:hover{
 	color:rgb(80, 80, 80);
 }
@@ -169,6 +171,16 @@ body{
 .grid-img-content {
 	padding: 10px 0px;
 }
+.grid-img-content span{
+	position: absolute;
+	margin-top: 15.5%;
+	display: block;	
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.8em;
+	color: rgb(155, 155, 155);
+	line-height: 1.8em;
+	width: 20%;
+}
 .comments li img{
 	vertical-align:center;
 }
@@ -181,6 +193,7 @@ body{
 }
 .grid.box {
 	border-bottom: 1px ridge rgb(240, 240, 240);
+	height: 58vh;
 }
 .grid-header {
 	margin-top: 18px;
@@ -745,6 +758,8 @@ body{
 	margin: 0 auto;
 }
 
-
+.image_caption{
+	margin-top: 6%;
+}
 
 

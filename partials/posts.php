@@ -20,13 +20,14 @@
 				</ul>
 			</div>
 			<div class="grid-img-content">
-			 <figure>
-			  <img src="adminbg/<?php echo $value['image'];?>" style="width:40vh;height:30vh;"/>
-			   <figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
-			 </figure>
-				<p><?php echo mb_substr($value['blog_description'],0, 350);?><a href="" style="color:#ea4c89;font-weight: bold;font-size: 13px">...continue reading</a></p>
+			  <img src="adminbg/<?php echo $value['image'];?>" alt="picture" style="width:40vh;height:30vh;"/>
+			   <span style="font-size: 0.7em;"><?php echo $value['image_caption']; ?></span>			
+				<p class="grid-header"><?php echo mb_substr($value['blog_description'],0, 350);?>
+					<a href="" style="color:#ea4c89;font-weight: bold;font-size: 13px">
+						...continue reading
+					</a>
+				</p>
 				<div class="clear"> </div>
-
 			</div>
 			
 			<div class="clear"></div>
