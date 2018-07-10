@@ -1,6 +1,6 @@
 				<div class="clear"> </div>
 	                <div class="footer">
-	                    <p>&#169 2013 myBlog | Design & Developed By <a href="">Md.Aminul Haq Mallik</a></p>
+	                    <p>&#169 <?php echo date("Y");?> myBlog | Design & Developed By <a href="">Md.Aminul Haq Mallik</a></p>
 	                </div>
                 <div class="clear"> </div>
         </div>

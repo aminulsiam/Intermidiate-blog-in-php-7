@@ -161,8 +161,10 @@ body{
 	padding:0px 0px 10px 0px;
 }
 .comments li {
+	float: left;
 	display:inline-block;
-	margin-top: 10px;	
+	margin-top: 7px;
+	margin-bottom: 20px;	
 }
 .grid-img-content {
 	padding: 10px 0px;
@@ -185,8 +187,9 @@ body{
 }
 /*----content-pagenation----*/
 .content-pagenation{
-	float:left;
+	text-align: center;
 	margin-top: 26px;
+	border-color: 1px solid black;
 	background: url(../images/content-border-bottom.png) bottom;
 }
 .content-pagenation ul li{

@@ -43,7 +43,6 @@
         }}'>
         <thead>
           <tr>
-            <th>Sl No.</th>
             <th>Author</th>
             <th>Blog title</th>
             <th>Description</th>
@@ -56,15 +55,16 @@
         
         <tbody>
           <?php 
-            $i = 1;
-            while( $value = $result->fetch(PDO::FETCH_ASSOC)){
+            $value = $result->fetch(PDO::FETCH_ASSOC);
           ?>
           <tr data-expanded="true">
-            <td class="col-md-1"><?php echo $i++;?></td>
             <td class="col-md-1"><?php echo $value['blog_author'];?></td>
             <td class="col-md-2"><?php echo $value['blog_title'];?></td>
-            <td class="col-md-4"><?php echo $value['blog_description'];?></td>
-            <td class="col-md-1">
+            <td class="col-md-3">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">click here to see description</button>
+              <!-- <?php //echo $value['blog_description'];?> -->
+            </td>
+            <td class="col-md-2">
               <?php 
                 if($value['status'] == 1){
                   echo "Published";
@@ -79,10 +79,31 @@
             </td>
             <td class="col-md-2"><?php echo $value['image_caption'];?></td>
           </tr>
-          <?php }?>
         </tbody>
-
       </table>
+            <div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"><?php echo $value['blog_title'];?></h4>
+        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <?php echo $value['blog_description'];?>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
     </div>
   </div>
 </div>

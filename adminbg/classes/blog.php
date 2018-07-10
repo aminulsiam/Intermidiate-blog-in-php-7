@@ -21,13 +21,13 @@
 		// SAVE BLOG
 		public function saveBlog($data)
 		{
-			$category    = $this->db->validation($data['blog_category']);
-			$blog_title  = $this->db->validation($data['blog_title']);
-			$author      = $this->db->validation($data['blog_author']);
+			$category    = $data['blog_category'];
+			$blog_title  = $data['blog_title'];
+			$author      = $data['blog_author'];
 			$description = $data['blog_description'];
 			$blog_status = $data['blog_status'];
 			$blog_image  = $this->blogImage();
-			$caption     = $this->db->validation($data['image_caption']);
+			$caption     = $data['image_caption'];
 			$created_at  = Carbon::now();
 			BEGIN;
 		    $query = "INSERT INTO tbl_blog(category_id,blog_title,blog_author,blog_description,status,created_at) VALUES ('$category','$blog_title','$author','$description','$blog_status','$created_at');
@@ -105,12 +105,12 @@
 				$result = $this->db->select($query);
 				$image_path = $result->fetch(PDO::FETCH_ASSOC);
 				unlink($image_path['image']);
-				$blog_title  = $this->db->validation($data['blog_title']);
-				$category    = $this->db->validation($data['blog_category']);
-				$author      = $this->db->validation($data['blog_author']);
-				$description = $this->db->validation($data['blog_description']);
-				$img_dict    = $this->db->blogImage();
-				$caption     = $this->db->validation($data['image_caption']);
+				$blog_title  = $data['blog_title'];
+				$category    = $data['blog_category'];
+				$author      = $data['blog_author'];
+				$description = $data['blog_description'];
+				$img_dict    = blogImage();
+				$caption     = $data['image_caption'];
 
 				$query = "UPDATE tbl_blog AS t1,tbl_image AS t2 SET 
 				            t1.blog_title='$blog_title',  
@@ -120,21 +120,27 @@
 				            t2.image='$img_dict',
 				            t2.image_caption='$caption' 
 				            WHERE t1.id='$id' AND t2.blog_id=t1.id";
-				$msg = $this->db->update($query);
+				$this->db->update($query);
 				session_start();
 				$_SESSION['msg'] = "Blog updated successfully";
-				header("location:manage_blog.php?category='$category'");            
+				header("location:manage_categorywise_blog.php");            
 			}else{
-				$category    = $this->db->validation($data['blog_category']);
-				$blog_title  = $this->db->validation($data['blog_title']);
-				$author      = $this->db->validation($data['blog_author']);
-				$description = $this->db->validation($data['blog_description']);
-				$caption     = $this->db->validation($data['image_caption']);
+				$category    = $data['blog_category'];
+				$blog_title  = $data['blog_title'];
+				$author      = $data['blog_author'];
+				$description = $data['blog_description'];
+				$caption     = $data['image_caption'];
 
-				$query = "UPDATE tbl_blog SET category_id='$category', blog_title='$blog_title',blog_author='$author',blog_description='$description' WHERE id='$id' ";
+				$query = "UPDATE tbl_blog AS t1,tbl_image AS t2 SET 
+				            t1.blog_title='$blog_title',  
+				            t1.category_id='$category',
+				            t1.blog_author='$author',
+				            t1.blog_description='$description',
+				            t2.image_caption='$caption' 
+				            WHERE t1.id='$id' AND t2.blog_id=t1.id ";
 				$msg = $this->db->update($query);
 				$_SESSION['msg'] = "Blog updated successfully";
-				header("location:manage_blog.php?category=$category ");
+				header("location:manage_categorywise_blog.php");
 			}	
 		}
 

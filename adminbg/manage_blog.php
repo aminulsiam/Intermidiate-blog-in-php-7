@@ -44,7 +44,7 @@
             <th class="col-md-1">Sl No.</th>
             <th class="col-md-2">Title</th>
             <th class="col-md-1">Author</th>
-            <th class="col-md-5 text-center">Blog Description</th>
+            <th class="col-md-1">Status</th>
             <th class="col-md-1">Date</th>
             <th class="col-md-2">Action</th>
           </tr>
@@ -55,7 +55,11 @@
             <td><?php echo $i++;?></td>
             <td><?php echo $value['blog_title'];?></td>
             <td><?php echo $value['blog_author'];?></td>
-            <td><?php echo strip_tags($value['blog_description']);?></td>
+            <td>
+              <?php
+              	echo $value['status'] == 0 ? 'unpublished' : 'published';
+              ?>
+            </td>
             <!-- <td><?//php echo $value['comment'];?></td> -->
             <td><?php echo $value['created_at'];?></td>
             <td>
