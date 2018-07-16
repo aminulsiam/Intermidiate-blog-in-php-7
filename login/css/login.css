@@ -30,6 +30,7 @@ a {
   top: 21%;
   left: 50%;
   margin-left: -175px;
+  color: black;
 }
 
 input[type="text"], input[type="password"] {

@@ -28,7 +28,7 @@
                 <input name='image' required="" type='file'>
                 <input class='animated' type='submit' name="btn" value='Register'>
             </form>
-            <a class='forgot' href='#'>Already have an account?</a>       
+            <a class='forgot' href='../login/login.php'>Already have an account?</a>       
         </div>
     </body>
 </html>

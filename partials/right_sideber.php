@@ -33,15 +33,4 @@
                     <h3>Recent Videos</h3>
                     <a href="#"><img src="images/videos.jpg" title="videos" /></a>
                 </div>
-                <div class="fallowers">
-                    <h3>Followers</h3>
-                    <ul>
-                        <li><a href="#"><img src="images/videos.jpg" title="name"></a></li>
-                        <li><a href="#"><img src="images/videos.jpg" title="name"></a></li>
-                        <li><a href="#"><img src="images/videos.jpg" title="name"></a></li>
-                        <li><a href="#"><img src="images/videos.jpg" title="name"></a></li>
-                        <li><a href="#"><img src="images/videos.jpg" title="name"></a></li>
-                        <li><a href="#"><img src="images/videos.jpg" title="name"></a></li>
-                    </ul>
-                </div>
             </div>

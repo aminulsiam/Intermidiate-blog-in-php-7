@@ -42,8 +42,7 @@
 			$picture  = $this->userImage();
 			$created  = Carbon::now();
 			$query = "INSERT INTO tbl_user(username,password,email,image,created_at) VALUES ('$username','$password','$email','$picture','$created')";
-			$msg = $this->insert($query);
-			// return $msg;
+			$this->insert($query);
 		}
 
 		// user login
@@ -52,9 +51,9 @@
 			$username = $data['username'];
 			$password = md5($data['password']);
 			$query = "SELECT username,password,image,status FROM tbl_user WHERE username='$username' AND password='$password'";
-			$result = $this->select($query);
-			$value  = $result->fetch(PDO::FETCH_ASSOC);
-			$count  = $result->rowCount();
+			$result = $this->db->select($query);
+			$value  = $result > 0 ? $result->fetch(PDO::FETCH_ASSOC) : " ";
+			$count  = $result > 0 ? $result->rowCount() : " ";
 			if($count > 0){
 				if($value['status'] == 1){
 					session_start();
@@ -63,11 +62,12 @@
 					$_SESSION['image'] = $value['image'];
 					header('location:../index.php');
 				}else{
+					$_SESSION['status_msg'] = "This admin deactivated your accout,please conntact this site admin.";
 					header('location:login.php');
 				}
 			}else{
-				//header('location:index.php');
-				die("wrong cretentials");
+				$_SESSION['wrong_msg'] = "Please give valid username and password";
+				header('location:login.php');
 			}
 		}
 		

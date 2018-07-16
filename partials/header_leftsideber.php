@@ -11,10 +11,14 @@
 <html>
     <head>
         <title>FeedLive Website Template | Home :: W3layouts</title>
+        <link rel="stylesheet" href="adminbg/css/bootstrap.min.css" >
+
         <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
+        <!-- Magnific image css -->
+        <link rel="stylesheet" href="magnific/magnific-popup.css">
         <meta name="keywords" content="FeedLive iphone web template, Android web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
         <link href='//fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     </head>
     <body>
     	<!-- <h1><a href="?logout=logout">logout</a></h1> -->
@@ -24,7 +28,7 @@
             <div class="left-sidebar">
                 <div class="logo">
                     <a href="index.php"><img src="images/logo.png" title="logo" /></a>
-                    <h1>Feedlive Blogger site</h1>
+                    <h1>My blogging site</h1>
                     
                     <div class="user_login_icon">
                         <?php
@@ -32,7 +36,8 @@
                         		if($_SESSION['image'] != Null ){
                         			$path = $_SESSION['image'];
                         			$image = "<img src='classes/$path' class='user_login_img'  id='logout' style='margin-top: 0;'>";
-                        			echo $image;	
+                        			echo $image;
+                                    // echo "<b style='color:white;'>".$_SESSION['username']."</b>";	
                         		}
                         	}else{
                         ?>
@@ -43,7 +48,8 @@
 
 	                    <span id="logout_user">
 	                        <div class="loginElement">
-	                            <a href="logout.php">Logout</a>
+	                            <a href="logout.php">Logout</a><b> | </b>
+                                <a href="add_blog_user.php">Add blog</a>
 	                        </div>
 	                    </span>
 
