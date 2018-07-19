@@ -35,12 +35,12 @@
 			{
 					$stmt = self::$connect->prepare($query) or die("wrong");
 	    	    	$stmt->execute();
-		    	    // if($stmt->rowCount()>0){
-		    	    // 	return $stmt;
-		    	    // }else{
-		    	    // 	return ;
-		    	    // }
-		    	    return $stmt->rowCount()>0 ? $stmt : false;
+		    	    if($stmt->rowCount()>0){
+		    	    	return $stmt;
+		    	    }else{
+		    	    	return false;
+		    	    }
+		    	    //return $stmt->rowCount()>0 ? $stmt : false;
 			}
 
 		//=========== Update query

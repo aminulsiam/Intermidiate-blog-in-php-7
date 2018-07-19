@@ -12,12 +12,13 @@
 
 	class Blog
 	{
-		private $db;
+		public $db;
 
 		public function __construct()
 		{
 			$this->db = new \DB;
 		}
+
 		// SAVE BLOG
 		public function saveBlog($data)
 		{
@@ -53,7 +54,7 @@
 	        	if($size > 5242880){
 	        		die("This file is too large.Upload a small file among 5 MB.");
 	        	}else{
-	        		if(in_array($case_img,$extention)){
+	        		if(\in_array($case_img,$extention)){
 	        			move_uploaded_file($tmp,$img_dict);
 	        			return $img_dict;
 	        		}else{
@@ -103,13 +104,13 @@
 			if($image != Null){
 				$query = "SELECT * FROM tbl_image WHERE blog_id='$id'";
 				$result = $this->db->select($query);
-				$image_path = $result->fetch(PDO::FETCH_ASSOC);
-				unlink($image_path['image']);
+				$path = $result->fetch(\PDO::FETCH_ASSOC);
+				unlink($path['image']);
 				$blog_title  = $data['blog_title'];
 				$category    = $data['blog_category'];
 				$author      = $data['blog_author'];
 				$description = $data['blog_description'];
-				$img_dict    = blogImage();
+				$img_dict    = $this->blogImage();
 				$caption     = $data['image_caption'];
 
 				$query = "UPDATE tbl_blog AS t1,tbl_image AS t2 SET 

@@ -4,6 +4,7 @@
     use Blog\Blog;
     
 	$blog = new Blog;
+
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $result = $blog->selectBlog($id);
@@ -39,7 +40,7 @@
                         <div class="panel-body" style="padding: 40px;">
                             <div class="form">
 
-                                <form class="cmxform form-horizontal " id="signupForm" method="post" action="" enctype="multipart/form-data">
+                                <form class="cmxform form-horizontal " method="post" action="" enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <label for="firstname" class="control-label col-lg-3">Blog title : </label>
                                         <div class="col-lg-6">
@@ -116,7 +117,6 @@
                                     <div class="form-group">
                                         <div class="col-lg-offset-3 col-lg-6">
                                             <button class="btn btn-primary" type="submit" name="btn">Save</button>
-                                            <button class="btn btn-default" type="button">Cancel</button>
                                         </div>
                                     </div>
                                 </form>

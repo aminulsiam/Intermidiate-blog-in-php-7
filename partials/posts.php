@@ -4,7 +4,6 @@
 	$blog = new Blog;
 	$posts = $blog->selectBlogInFrontend();
 	
-	
 ?>
 
 <div class="grids">

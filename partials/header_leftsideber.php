@@ -10,7 +10,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>FeedLive Website Template | Home :: W3layouts</title>
+        <title>My-blog</title>
         <link rel="stylesheet" href="adminbg/css/bootstrap.min.css" >
 
         <link href="css/style.css" rel="stylesheet" type="text/css"  media="all" />
@@ -21,7 +21,6 @@
         <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     </head>
     <body>
-    	<!-- <h1><a href="?logout=logout">logout</a></h1> -->
         <!---start-wrap---->
         <div class="wrap">
             <!---start-sidebar---->
@@ -69,7 +68,7 @@
                             while($value = $result->fetch(PDO::FETCH_ASSOC)){
                         ?>
                         <li class="category_li">
-                            <a href="?category=<?php echo $value['category'];?>">
+                            <a href="show_categorywise_blog.php?category=<?php echo $value['category'];?>">
                                 <?php echo $value['category'];?>
                             </a>
                         </li>

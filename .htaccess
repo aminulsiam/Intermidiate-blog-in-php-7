@@ -1,0 +1,5 @@
+#RewriteEngine On
+#RewriteRule ^index.php?$ 
+#RewriteRule ^index.php?category?$ index.php/category
+#RewriteRule ^show_single_blog.php?$ single_blog
+#RewriteRule ^manage_category.asp?$ manage_category.php
