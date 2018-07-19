@@ -209,7 +209,7 @@ body{
 	display:inline-block;
 }
 .content-pagenation li a{
-	color: #ea4c89;
+	color: black;
 	font-size: 0.8em;
 	font-family: 'Merriweather Sans', sans-serif;
 	background: #fff;
@@ -220,7 +220,13 @@ body{
 	-o-transition: all .5s;
 	-ms-transition: all .5s;
 	transition: all .5s;
+	border: 3px solid #ea4c89
 }
+.content-pagenation li a:hover{
+	text-decoration: none;
+	border: 3px solid #fff;
+}
+
 .content-pagenation li span{
 	color: #ea4c89;
 	font-size: 0.8em;
