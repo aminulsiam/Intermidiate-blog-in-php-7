@@ -3,8 +3,13 @@
 	/**
 	* ==========  BLOG CLASS
 	*/
+	// use EasyBanglaDate\Types\BnDateTime;
+ //    use EasyBanglaDate\Types\DateTime as EnDateTime;
+
 	require_once '../db/db.php';
 	require_once '../vendor/autoload.php';
+	require_once '../bndate.php';
+	
 	use Carbon\Carbon;
 
 	define("BEGIN", "BEGIN");
@@ -13,10 +18,13 @@
 	class Blog
 	{
 		public $db;
+		public $bongabda;
 
 		public function __construct()
 		{
 			$this->db = new \DB;
+			//$this->bongabda = new \BnDateTime('now', new \DateTimeZone('Asia/Dhaka'));
+		    //$this->$bongabda->getDateTime()->format('l jS F Y b h:i:s');
 		}
 
 		// SAVE BLOG
@@ -29,7 +37,7 @@
 			$blog_status = $data['blog_status'];
 			$blog_image  = $this->blogImage();
 			$caption     = $data['image_caption'];
-			$created_at  = Carbon::now();
+			$created_at  = bn_date(date('l, d M Y, h:i a'));
 			BEGIN;
 		    $query = "INSERT INTO tbl_blog(category_id,blog_title,blog_author,blog_description,status,created_at) VALUES ('$category','$blog_title','$author','$description','$blog_status','$created_at');
 					INSERT INTO tbl_image(image,image_caption,blog_id) VALUES ('$blog_image','$caption',LAST_INSERT_ID())";
@@ -90,8 +98,7 @@
 		// select blog for update
 		public function selectBlog($id)
 		{
-			$query = "SELECT t1.*,t2.*,t3.* FROM tbl_blog AS t1 INNER JOIN tbl_category AS t2 ON t1.category_id=t2.id INNER JOIN tbl_image AS t3 ON t1.id=t3.blog_id 
-			    WHERE t1.id='$id'";
+			$query = "SELECT t1.*,t2.*,t3.* FROM tbl_blog AS t1 INNER JOIN tbl_category AS t2 ON t1.category_id=t2.id INNER JOIN tbl_image AS t3 ON t1.id=t3.blog_id WHERE t1.id='$id'";
 			return $this->db->select($query);
 			
 		}
@@ -112,12 +119,16 @@
 				$description = $data['blog_description'];
 				$img_dict    = $this->blogImage();
 				$caption     = $data['image_caption'];
+				$status      = $data['blog_status'];
+				$created_at  = bn_date(date('l, d M Y, h:i:a'));
 
 				$query = "UPDATE tbl_blog AS t1,tbl_image AS t2 SET 
 				            t1.blog_title='$blog_title',  
 				            t1.category_id='$category',
 				            t1.blog_author='$author',
 				            t1.blog_description='$description',
+							t1.status='$status',
+							t1.created_at='$created_at',
 				            t2.image='$img_dict',
 				            t2.image_caption='$caption' 
 				            WHERE t1.id='$id' AND t2.blog_id=t1.id";
@@ -126,17 +137,21 @@
 				$_SESSION['msg'] = "Blog updated successfully";
 				header("location:manage_categorywise_blog.php");            
 			}else{
-				$category    = $data['blog_category'];
 				$blog_title  = $data['blog_title'];
+				$category    = $data['blog_category'];
 				$author      = $data['blog_author'];
 				$description = $data['blog_description'];
 				$caption     = $data['image_caption'];
+				$status      = $data['blog_status'];
+				$created_at  = bn_date(date('l, d M Y, h:i:a'));
 
 				$query = "UPDATE tbl_blog AS t1,tbl_image AS t2 SET 
 				            t1.blog_title='$blog_title',  
 				            t1.category_id='$category',
 				            t1.blog_author='$author',
 				            t1.blog_description='$description',
+				            t1.status='$status',
+							t1.created_at='$created_at',
 				            t2.image_caption='$caption' 
 				            WHERE t1.id='$id' AND t2.blog_id=t1.id ";
 				$msg = $this->db->update($query);

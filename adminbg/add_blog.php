@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label for="image" class="control-label col-lg-3">Picture : </label>
+                                        <label for="image" class="control-label col-lg-3">Blog Picture : </label>
                                         <div class="col-lg-6">
                                             <input class="form-control-file" name="blog_image" type="file" style="margin-top: 5px;">
                                         </div>
@@ -100,8 +100,7 @@
 
                                     <div class="form-group">
                                         <div class="col-lg-offset-3 col-lg-6">
-                                            <button class="btn btn-primary" type="submit" name="btn">Save</button>
-                                            <button class="btn btn-default" type="button">Cancel</button>
+                                            <button class="btn btn-primary btn-block" type="submit" name="btn">Save</button>
                                         </div>
                                     </div>
                                 </form>
