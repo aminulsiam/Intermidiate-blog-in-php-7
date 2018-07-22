@@ -14,6 +14,10 @@
 		$title = $_GET['title'];
 		$posts = $blog->selectTitlewiseBlog($title);
 		$value = $posts->fetch(PDO::FETCH_ASSOC);
+		// echo "<pre>";
+		// print_r($value);
+		// die();
+
 	}
 	
 ?>

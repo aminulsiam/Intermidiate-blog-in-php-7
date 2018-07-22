@@ -4,10 +4,10 @@
 	                </div>
                 <div class="clear"> </div>
         </div>
+
         <!---end-wrap---->
-        <script src="adminbg/js/jquery.min.js"></script>
-        <script type="adminbg/js/bootstrap.js"></script>
-		<script src="js/blog.js"></script>
-		
+        <script src="adminbg/js/jquery-3.2.1.min.js"></script>
+        <script src="adminbg/js/bootstrap.js"></script>
+		<script src="js/blog.js"></script>		
  </body>
 </html>       

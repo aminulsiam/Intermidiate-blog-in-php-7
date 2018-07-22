@@ -19,6 +19,7 @@
         <meta name="keywords" content="FeedLive iphone web template, Android web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
         <link href='//fonts.googleapis.com/css?family=Merriweather+Sans' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+        <script src="adminbg/ckeditor/ckeditor.js"></script>
     </head>
     <body>
         <!---start-wrap---->

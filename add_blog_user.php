@@ -1,7 +1,12 @@
 
 <!-- header and left sideber -->
 
-<?php include './partials/header_leftsideber.php'; ?>
+<?php 
+  include './partials/header_leftsideber.php'; 
+  if(!$_SESSION['username']){
+    header('location:adminbg/404.html');
+  }
+?>
 
 <!-- start-content -->
 <div class="content">
@@ -10,10 +15,10 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Add Blog
+                            Add Blog <hr>
                         </header>
                         <div class="panel-body" style="padding: 40px;">
-                            <div class="form">
+                            <div class="form" style="width: 120%">
                                 <form class="cmxform form-horizontal " id="signupForm" method="post" action="" enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <label for="firstname" class="control-label col-lg-3">Blog title : </label>
@@ -27,7 +32,12 @@
                        <div class="col-lg-6">
                          <select class="form-control" name="blog_category">
                           <option>Select category</option>
-                        
+                          <?php
+                            $result = $category->selectCategory();
+                            while ($value=$result->fetch(PDO::FETCH_ASSOC)) {
+                          ?>
+                          <option value="$value['category']"><?php echo $value['category'];?></option>
+                        <?php }?>
                         </select>
                         
                        </div>
@@ -36,7 +46,7 @@
                                     <div class="form-group ">
                                         <label class="control-label col-lg-3">Author : </label>
                                         <div class="col-lg-6">
-                                            <input class=" form-control" name="blog_author" value="Admin" type="text">
+                                            <input class=" form-control" name="blog_author" value="<?php echo $_SESSION['username'];?>" readonly type="text">
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -52,7 +62,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label for="image" class="control-label col-lg-3">Picture : </label>
+                                        <label for="image" class="control-label col-lg-3">Blog Picture : </label>
                                         <div class="col-lg-6">
                                             <input class="form-control-file" name="blog_image" type="file" style="margin-top: 5px;">
                                         </div>
@@ -63,22 +73,9 @@
                                             <input class=" form-control" id="discription" name="image_caption" placeholder="enter image caption..." type="text">
                                         </div>
                                     </div>
-
-                                    <div class="form-group">
-                      <label for="" class="control-label col-lg-3">Status : </label>
-                       <div class="col-lg-6">
-                           <select class="form-control" name="blog_status">
-                              <option value="0">Unpublished</option>
-                              <option value="1">Published</option>
-                          </select>
-                       </div>
-                    </div>
-
-
                                     <div class="form-group">
                                         <div class="col-lg-offset-3 col-lg-6">
-                                            <button class="btn btn-primary" type="submit" name="btn">Save</button>
-                                            <button class="btn btn-default" type="button">Cancel</button>
+                                            <button class="btn btn-block btn-primary" type="submit" name="btn">Save</button>
                                         </div>
                                     </div>
                                 </form>
