@@ -31,7 +31,7 @@
 		{
 			$query = "SELECT t1.*,t2.*,t3.* FROM tbl_blog AS t1 INNER JOIN 
 					  tbl_image AS t2 ON t1.id=t2.blog_id INNER JOIN 
-					  tbl_category AS t3 ON t1.category_id=t3.id WHERE t1.id = '$blog_id'";
+					  tbl_category AS t3 ON t1.category_id=t3.id WHERE t1.id='$blog_id'";
 			return $this->db->select($query);
 		}
 

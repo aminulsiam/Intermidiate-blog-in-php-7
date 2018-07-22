@@ -1,2 +1,2 @@
 # My-Blog
-its a portfolio project 
+ sits a portfolio project 

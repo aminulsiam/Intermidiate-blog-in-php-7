@@ -17,7 +17,7 @@
 			<div class="grid-header">
 				<h3 align="center"><?php echo $value['blog_title'];?> </h3>
 				<ul>
-				<li><span>Post By Admin on sunday,March 05,2013 with</span></li>
+				<li><span>Post By <strong style="font-size: 2vh;color: #ea4c89;font-weight: bold;"><?php echo $value['blog_author'];?></strong> on <?php echo $value['created_at'];?></span></li>
 				<li><a href="#">5 comments</a></li>
 				</ul>
 			</div>
