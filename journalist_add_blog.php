@@ -3,9 +3,9 @@
 
 <?php 
   include './partials/header_leftsideber.php'; 
-  // if(!$_SESSION['username']){
-  //   header('location:adminbg/404.html');
-  // }
+  if(!$_SESSION['journalist_email']){
+    header('location:adminbg/404.html');
+  }
 ?>
 
 <!-- start-content -->
@@ -15,7 +15,9 @@
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Add Blog <hr>
+                            Add Blog <a href="logout.php" style="float: right">
+                              <button class="btn btn-danger">logout</button>
+                            </a> <hr>
                         </header>
                         <div class="panel-body" style="padding: 40px;">
                             <div class="form" style="width: 120%">
@@ -46,7 +48,7 @@
                                     <div class="form-group ">
                                         <label class="control-label col-lg-3">Author : </label>
                                         <div class="col-lg-6">
-                                            <input class=" form-control" name="blog_author" value="<?php echo $_SESSION['username'];?>" readonly type="text">
+                                            <input class=" form-control" name="blog_author" value="<?php echo $_SESSION['journalist_name'];?>" readonly type="text">
                                         </div>
                                     </div>
                                     <div class="form-group ">

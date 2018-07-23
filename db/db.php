@@ -38,7 +38,7 @@
 		    	    if($stmt->rowCount()>0){
 		    	    	return $stmt;
 		    	    }else{
-		    	    	return false;
+		    	    	return "Nothing found ";
 		    	    }
 		    	    //return $stmt->rowCount()>0 ? $stmt : false;
 			}

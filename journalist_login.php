@@ -2,10 +2,19 @@
 <!-- header and left sideber -->
 
 <?php 
-  include './partials/header_leftsideber.php'; 
-  // if(!$_SESSION['username']){
-  //   header('location:adminbg/404.html');
-  // }
+  include './partials/header_leftsideber.php';
+  include './classes/journalist.php';
+
+  use Journalist\Frontend\Journalist;
+
+  if(isset($_SESSION['journalist_email'])){
+    header('location:journalist_add_blog.php');
+  }
+
+  if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $journalist = new Journalist;
+    $journalist->journalistLogin($_POST);
+  }
 ?>
 
 <!-- start-content -->
@@ -19,17 +28,17 @@
                         </header>
                         <div class="panel-body" style="padding: 40px;">
                             <div class="form" style="width: 120%">
-                                <form class="cmxform form-horizontal " id="signupForm" method="post" action="" enctype="multipart/form-data">
+                                <form class="cmxform form-horizontal " method="post" action="">
                                     <div class="form-group ">
                                         <label for="firstname" class="control-label col-lg-3">E-mail : </label>
                                         <div class="col-lg-6">
-                                            <input class=" form-control" placeholder="enter your email here...." name="blog_title" type="text">
+                                            <input class=" form-control" placeholder="enter your email here...." name="journalist_email" type="text">
                                         </div>
                                     </div>
                                     <div class="form-group ">
                                         <label for="password" class="control-label col-lg-3">Password : </label>
                                         <div class="col-lg-6">
-                                            <input class=" form-control" id="discription" name="image_caption" placeholder="enter your password" type="password">
+                                            <input class=" form-control" name="journalist_password" placeholder="enter your password" type="password">
                                         </div>
                                     </div>
                                     <div class="form-group">
