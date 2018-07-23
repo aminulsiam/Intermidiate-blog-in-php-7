@@ -60,6 +60,17 @@
 						<li><a href="dropzone.html">Dropzone</a></li>
                     </ul>
                 </li>
+                <!-- Manage journalist -->
+                <li class="sub-menu">
+                    <a href="javascript:;">
+                        <i class="fa fa-dashboard"></i>
+                        <span>Journalist </span>
+                    </a>
+                    <ul class="sub">
+                        <li><a href="add_journalist.php">add journalist</a></li>
+                        <li><a href="total_journalist.php">total journalist</a></li>
+                    </ul>
+                </li>
                 
                 <li class="sub-menu">
                     <a href="javascript:;">
@@ -71,26 +82,8 @@
                         <li><a href="mail_compose.html">Compose Mail</a></li>
                     </ul>
                 </li>
-
-                
-                <li class="sub-menu">
-                    <a href="javascript:;">
-                        <i class="fa fa-glass"></i>
-                        <span>Extra</span>
-                    </a>
-                    <ul class="sub">
-                        <li><a href="gallery.html">Gallery</a></li>
-						<li><a href="404.html">404 Error</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="login.html">
-                        <i class="fa fa-user"></i>
-                        <span>Login Page</span>
-                    </a>
-                </li>
-            </ul>            </div>
+            </ul>           
+             </div>
         <!-- sidebar menu end-->
     </div>
 </aside>

@@ -48,8 +48,7 @@
 
 	                    <span id="logout_user">
 	                        <div class="loginElement">
-	                            <a href="logout.php">Logout</a><b> | </b>
-                                <a href="add_blog_user.php">Add blog</a>
+	                            <a href="logout.php">Logout</a>
 	                        </div>
 	                    </span>
 

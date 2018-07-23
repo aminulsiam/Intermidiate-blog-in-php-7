@@ -7,12 +7,12 @@
 	
 	class Auth extends DB
 	{
-		// private $db;
+		private $db;
 
-		// public function __construct()
-		// {
-		// 	$this->db = new \DB;
-		// }
+		public function __construct()
+		{
+			$this->db = new \DB;
+		}
 
 		// admin login 
 		public function adminLogin($data)
