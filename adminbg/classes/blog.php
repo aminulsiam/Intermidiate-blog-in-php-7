@@ -35,11 +35,12 @@
 			$author      = $data['blog_author'];
 			$description = $data['blog_description'];
 			$blog_status = $data['blog_status'];
+			$importance  = $data['importance'];
 			$blog_image  = $this->blogImage();
 			$caption     = $data['image_caption'];
 			$created_at  = bn_date(date('l, d M Y, h:i a'));
 			BEGIN;
-		    $query = "INSERT INTO tbl_blog(category_id,blog_title,blog_author,blog_description,status,created_at) VALUES ('$category','$blog_title','$author','$description','$blog_status','$created_at');
+		    $query = "INSERT INTO tbl_blog(category_id,blog_title,blog_author,blog_description,status,blog_importance,created_at) VALUES ('$category','$blog_title','$author','$description','$blog_status','$importance','$created_at');
 					INSERT INTO tbl_image(image,image_caption,blog_id) VALUES ('$blog_image','$caption',LAST_INSERT_ID())";
 			COMMIT;
 			$msg = $this->db->insert($query);

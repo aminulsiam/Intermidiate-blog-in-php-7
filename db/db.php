@@ -25,7 +25,7 @@
 						$msg = "Data Inserted Successfully Done";
 						return $msg;
 					}else{
-						die("Something went wrong");
+						die("something wrong, please try again");
 					}
 			}
 

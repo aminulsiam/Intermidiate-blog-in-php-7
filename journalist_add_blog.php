@@ -2,10 +2,20 @@
 <!-- header and left sideber -->
 
 <?php 
-  include './partials/header_leftsideber.php'; 
+  include './partials/header_leftsideber.php';
+  include './classes/journalist.php';
+
+  use Journalist\Frontend\Journalist;
+
   if(!$_SESSION['journalist_email']){
     header('location:adminbg/404.html');
   }
+
+  if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    $journalist = new Journalist;
+    $msg = $journalist->saveJournalistBlog($_POST);
+  }
+
 ?>
 
 <!-- start-content -->
@@ -21,7 +31,12 @@
                         </header>
                         <div class="panel-body" style="padding: 40px;">
                             <div class="form" style="width: 120%">
-                                <form class="cmxform form-horizontal " id="signupForm" method="post" action="" enctype="multipart/form-data">
+                                <?php 
+                                  if(isset($msg)){
+                                    echo "<h4 class='text-success alert alert-success' style='width:72%;margin-bottom:5%;margin-left:8%;';>your blog is send to admin , if admin accepted your blog then is published.</h4>";
+                                  }
+                                ?>
+                                <form class="cmxform form-horizontal " method="post" action="" enctype="multipart/form-data">
                                     <div class="form-group ">
                                         <label for="firstname" class="control-label col-lg-3">Blog title : </label>
                                         <div class="col-lg-6">
@@ -38,7 +53,7 @@
                             $result = $category->selectCategory();
                             while ($value=$result->fetch(PDO::FETCH_ASSOC)) {
                           ?>
-                          <option value="$value['category']"><?php echo $value['category'];?></option>
+                          <option value="<?php echo $value['id']?>"><?php echo $value['category'];?></option>
                         <?php }?>
                         </select>
                         
@@ -70,7 +85,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label for="lastname" class="control-label col-lg-3">Image caption : </label>
+                                        <label for="caption" class="control-label col-lg-3">Image caption : </label>
                                         <div class="col-lg-6">
                                             <input class=" form-control" id="discription" name="image_caption" placeholder="enter image caption..." type="text">
                                         </div>
@@ -81,19 +96,6 @@
                                         </div>
                                     </div>
                                 </form>
-                                <span>
-                                  <?php if(isset($msg)){  
-                                echo '<script type="text/javascript">
-                                    jQuery(function() {
-                              swal({
-                            title: "Blog created successfully !!!",
-                            icon: "success",
-                            button: "ok",
-                          });
-                          });
-                                    </script> ';
-                              }?>
-                                </span>
                             </div>
                         </div>
                     </section>

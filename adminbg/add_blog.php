@@ -87,6 +87,13 @@
                                         </div>
                                     </div>
 
+                                    <div class="checkbox" style="margin-left: 26%;
+                                        margin-bottom: 20px;">
+                                      <label>
+                                        <input type="checkbox" value="yes" name="importance">Want to see this post in home page ??
+                                    </label>
+                                    </div>
+
                                     <div class="form-group">
 									    <label for="" class="control-label col-lg-3">Status : </label>
 										   <div class="col-lg-6">

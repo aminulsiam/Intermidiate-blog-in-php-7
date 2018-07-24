@@ -1,7 +1,7 @@
 <?php
 	session_start();
     require "classes/Fcategory.php";
-
+    
     use Category\Frontend\Category;
 
     $category = new Category;
