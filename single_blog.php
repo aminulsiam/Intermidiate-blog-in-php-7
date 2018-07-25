@@ -1,5 +1,6 @@
 <?php
 	require "classes/blog.php";
+
 	use Frontend\Blog\Blog;
 	
 	$blog = new Blog;
@@ -14,14 +15,8 @@
 		$title = $_GET['title'];
 		$posts = $blog->selectTitlewiseBlog($title);
 		$value = $posts->fetch(PDO::FETCH_ASSOC);
-		// echo "<pre>";
-		// print_r($value);
-		// die();
-
-	}
-	
+	}	
 ?>
-
 <div class="grids">
 	<div class="grid box">
 	   <div class="grid-header">
