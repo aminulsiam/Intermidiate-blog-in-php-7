@@ -1,6 +1,8 @@
 <?php
 	require "classes/blog.php";
+
 	use Frontend\Blog\Blog;
+
 	$blog = new Blog;
 	$posts = $blog->selectBlogInFrontend();
 	
@@ -22,7 +24,7 @@
 			  <img src="adminbg/<?php echo $value['image'];?>" alt="picture" style="width:40vh;height:30vh;"/>
 			   <span style="font-size: 0.7em;"><?php echo $value['image_caption']; ?></span>			
 				<p class="grid-header"><?php echo mb_substr($value['blog_description'],0, 350);?>
-					<a href="show_single_blog.php?blog_id=<?php echo $value['id'];?>" style="color:#ea4c89;font-weight: bold;font-size: 13px;text-decoration: none;">
+					<a href="show_single_blog.php?title=<?php echo $value['blog_title'];?>" style="color:#ea4c89;font-weight: bold;font-size: 13px;text-decoration: none;">
 						...continue reading
 					</a>
 				</p>

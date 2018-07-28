@@ -50,15 +50,15 @@
 		{
 			$username = $data['username'];
 			$password = md5($data['password']);
-			$query = "SELECT username,password,image,status FROM tbl_user WHERE username='$username' AND password='$password'";
+			$query = "SELECT * FROM tbl_user WHERE username='$username' AND password='$password'";
 			$result = $this->db->select($query);
 			$value  = $result > 0 ? $result->fetch(PDO::FETCH_ASSOC) : " ";
 			$count  = $result > 0 ? $result->rowCount() : " ";
 			if($count > 0){
 				if($value['status'] == 1){
 					session_start();
+					$_SESSION['user_id']= $value['id'];
 					$_SESSION['username']= $value['username'];
-					$_SESSION['id']= $value['id'];
 					$_SESSION['image'] = $value['image'];
 					header('location:../index.php');
 				}else{
