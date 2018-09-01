@@ -1,29 +1,27 @@
 <?php
-	require_once 'classes/blog.php';
+require_once 'classes/blog.php';
 
-    use Blog\Blog;
+use Blog\Blog;
 
-	$blog = new Blog;
-	if($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$msg = $blog->saveBlog($_POST);
-	}
+$blog = new Blog;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $msg = $blog->saveBlog($_POST);
+}
 ?>
 
-	<?php include"./inc/header.php";?>
+<?php include"./inc/header.php"; ?>
 <!--header end-->
 
 
-	<!--sidebar start-->
-		<?php include"./inc/sidebar.php";?>
-	<!--sidebar end-->
+<!--sidebar start-->
+<?php include"./inc/sidebar.php"; ?>
+<!--sidebar end-->
 <!--main content start-->
 <section id="main-content">
-	<section class="wrapper">
-		<!-- MAIN CONTENT START -->
-			<div class="">
+    <section class="wrapper">
+        <!-- MAIN CONTENT START -->
+        <div class="">
             <!-- page start-->
-           
-            
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -41,20 +39,20 @@
                                     </div>
 
                                     <div class="form-group">
-									    <label for="" class="control-label col-lg-3">Category : </label>
-										   <div class="col-lg-6">
-										   	 <select class="form-control" name="blog_category">
-										   	  <option>Select category</option>
-										   	<?php 
-										   		$result = $blog->selectCategoryInBlog();
-										   		while($value = $result->fetch(PDO::FETCH_ASSOC)){ 
-										   	?>
-										      <option value="<?php echo $value['id'];?>"><?php echo $value['category'];?></option>
-										    <?php } ?>
-										    </select>
-										    
-										   </div>
-								  	</div>
+                                        <label for="" class="control-label col-lg-3">Category : </label>
+                                        <div class="col-lg-6">
+                                            <select class="form-control" name="blog_category">
+                                                <option>Select category</option>
+                                                <?php
+                                                $result = $blog->selectCategoryInBlog();
+                                                while ($value = $result->fetch(PDO::FETCH_ASSOC)) {
+                                                    ?>
+                                                    <option value="<?php echo $value['id']; ?>"><?php echo $value['category']; ?></option>
+                                                <?php } ?>
+                                            </select>
+
+                                        </div>
+                                    </div>
 
                                     <div class="form-group ">
                                         <label class="control-label col-lg-3">Author : </label>
@@ -65,13 +63,13 @@
                                     <div class="form-group ">
                                         <label for="lastname" class="control-label col-lg-3">Blog description : </label>
                                         <div class="col-lg-6">
-                                        	<textarea name="blog_description" id="editor1">    
-            								</textarea>
-								            <script>
-								                CKEDITOR.replace( 'editor1' );
-								            </script>
-                                        	<!-- 
-                                            <input class=" form-control" name="blog_description"  --><!-- placeholder="enter blog description..." type="text"> -->
+                                            <textarea name="blog_description" id="editor1">    
+                                            </textarea>
+                                            <script>
+                                                CKEDITOR.replace('editor1');
+                                            </script>
+                                            <!-- 
+                                        <input class=" form-control" name="blog_description"  --><!-- placeholder="enter blog description..." type="text"> -->
                                         </div>
                                     </div>
                                     <div class="form-group ">
@@ -88,21 +86,21 @@
                                     </div>
 
                                     <div class="checkbox" style="margin-left: 26%;
-                                        margin-bottom: 20px;">
-                                      <label>
-                                        <input type="checkbox" value="yes" name="importance">Want to see this post in home page ??
-                                    </label>
+                                         margin-bottom: 20px;">
+                                        <label>
+                                            <input type="checkbox" value="yes" name="importance">Want to see this post in home page ??
+                                        </label>
                                     </div>
 
                                     <div class="form-group">
-									    <label for="" class="control-label col-lg-3">Status : </label>
-										   <div class="col-lg-6">
-											   	 <select class="form-control" name="blog_status">
-												   	  <option value="0">Unpublished</option>
-												   	  <option value="1">Published</option>
-											    </select>
-										   </div>
-								  	</div>
+                                        <label for="" class="control-label col-lg-3">Status : </label>
+                                        <div class="col-lg-6">
+                                            <select class="form-control" name="blog_status">
+                                                <option value="0">Unpublished</option>
+                                                <option value="1">Published</option>
+                                            </select>
+                                        </div>
+                                    </div>
 
 
                                     <div class="form-group">
@@ -112,17 +110,19 @@
                                     </div>
                                 </form>
                                 <span>
-                                	<?php if(isset($msg)){  
-		                         		echo '<script type="text/javascript">
-		                         				jQuery(function() {
-											        swal({
-													  title: "Blog created successfully !!!",
-													  icon: "success",
-													  button: "ok",
-													});
-											    });
-		                         			  </script> ';
-                         	 		}?>
+                                    <?php
+                                    if (isset($msg)) {
+                                        echo '<script type="text/javascript">
+                                                jQuery(function() {
+                                                swal({
+                                                title: "Blog created successfully !!!",
+                                                icon: "success",
+                                                button: "ok",
+                                              });
+                                            });
+                                          </script> ';
+                                    }
+                                    ?>
                                 </span>
                             </div>
                         </div>
@@ -132,8 +132,8 @@
             <!-- page end-->
         </div>
 
-		<!-- MAIN CONTENT END -->
-	</section>
- <!-- footer -->
+        <!-- MAIN CONTENT END -->
+    </section>
+    <!-- footer -->
 
- 		<?php include "./inc/footer.php";?>
+    <?php include "./inc/footer.php"; ?>
