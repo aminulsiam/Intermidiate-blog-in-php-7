@@ -49,14 +49,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <?php
                             if (isset($msg)) {
                                 echo '<script type="text/javascript">
-                         				jQuery(function() {
-									        swal({
-											  title: "Blog category created!!",
-											  icon: "success",
-											  button: "ok",
-											});
-									    });
-                         			  </script> ';
+					jQuery(function() {
+					    swal({
+						  title: "Blog category created!!",
+						  icon: "success",
+						  button: "ok",
+						});
+					    });
+					  </script> ';
                             }
                             ?>
                         </h3>
