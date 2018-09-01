@@ -22,8 +22,6 @@
     
     <!-- ============ main content start  =================  -->
 
-
-
 <section class="wrapper">
     <div class="table-agile-info">
  <div class="panel panel-default">
@@ -108,12 +106,8 @@
   </div>
 </div>
 </section>
-      
-      
     
     <!-- ============ main content end  =================  -->
-
-
 
          <!-- footer -->
             <?php include 'inc/footer.php';?>     

@@ -1,29 +1,27 @@
 <?php
-	require_once 'classes/journalist.php';
+require_once 'classes/journalist.php';
 
-    use Journalist\Admin\Journalist;
+use Journalist\Admin\Journalist;
 
-	$blog = new Journalist;
-	if($_SERVER['REQUEST_METHOD'] == 'POST'){
-		$msg = $blog->addJournalist($_POST);
-	}
+$blog = new Journalist;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $msg = $blog->addJournalist($_POST);
+}
 ?>
 
-	<?php include"./inc/header.php";?>
+<?php include"./inc/header.php"; ?>
 <!--header end-->
 
 
-	<!--sidebar start-->
-		<?php include"./inc/sidebar.php";?>
-	<!--sidebar end-->
+<!--sidebar start-->
+<?php include"./inc/sidebar.php"; ?>
+<!--sidebar end-->
 <!--main content start-->
 <section id="main-content">
-	<section class="wrapper">
-		<!-- MAIN CONTENT START -->
-			<div class="">
+    <section class="wrapper">
+        <!-- MAIN CONTENT START -->
+        <div class="">
             <!-- page start-->
-           
-            
             <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
@@ -33,7 +31,7 @@
                         <div class="panel-body" style="padding: 40px;">
                             <div class="form">
                                 <form class="cmxform form-horizontal " id="signupForm" method="post" action="" enctype="multipart/form-data">
-                                    
+
                                     <div class="form-group ">
                                         <label for="firstname" class="control-label col-lg-3">Journalist name : </label>
                                         <div class="col-lg-6">
@@ -48,7 +46,7 @@
                                         </div>
                                     </div>
 
-                                
+
                                     <div class="form-group ">
                                         <label for="lastname" class="control-label col-lg-3">Phone number : </label>
                                         <div class="col-lg-6">
@@ -68,17 +66,19 @@
                                     </div>
                                 </form>
                                 <span>
-                                	<?php if(isset($msg)){  
-		                         		echo '<script type="text/javascript">
-		                         				jQuery(function() {
-											        swal({
-													  title: "Journalist added successfully !!!",
-													  icon: "success",
-													  button: "ok",
-													});
-											    });
-		                         			  </script> ';
-                         	 		}?>
+                                    <?php
+                                    if (isset($msg)) {
+                                        echo '<script type="text/javascript">
+                                                    jQuery(function() {
+                                                        swal({
+                                                            title: "Journalist added successfully !!!",
+                                                            icon: "success",
+                                                            button: "ok",
+                                                          });
+                                                    });
+                                              </script> ';
+                                    }
+                                    ?>
                                 </span>
                             </div>
                         </div>
@@ -88,8 +88,8 @@
             <!-- page end-->
         </div>
 
-		<!-- MAIN CONTENT END -->
-	</section>
- <!-- footer -->
+        <!-- MAIN CONTENT END -->
+    </section>
+    <!-- footer -->
 
- 		<?php include "./inc/footer.php";?>
+<?php include "./inc/footer.php"; ?>
