@@ -4,13 +4,25 @@
 	use Frontend\Blog\Blog;
 
 	$blog = new Blog;
+
 	$posts = $blog->selectBlogInFrontend();
+
+	if(isset($_GET['page'])){
+		$total_row = $posts->rowCount();
+		$post_per_page = 3;
+		$pages = ceil($total_row/$post_per_page);
+		$page  = isset($_GET['page']) ? (int)$_GET['page'] : $_GET['page']=1;
+		$start = ($pages-1)*$post_per_page;
+		$posts = $blog->selectBlogByPagination($start,$post_per_page);
+		print_r($posts);
+		die();	
+	}
 	
 ?>
 
 <div class="grids">
 	<?php
-		while ($value = $posts->fetch(PDO::FETCH_ASSOC)) {
+		foreach ($posts as $value){
 	?>
 		<div class="grid box">
 			<div class="grid-header">
@@ -34,19 +46,20 @@
 			<div class="clear"></div>
 		</div>
 		<?php } ?>
-		
-	
+			
 			<div class="clear"> </div>
 	</div>
 			<div class="clear"> </div>
 			<!--  pagination -->
+
 			<div class="content-pagenation">
 				<li><a href="#">1</a></li>
-				<li><a href="#">2</a></li>
-				<li><a href="#">3</a></li>
+				<li><a href="?page=2">2</a></li>
+				<li><a href="?page=3">3</a></li>
 				<div class="clear"> </div>
 			</div>
-					<div class="clear"> </div>
+
+			<div class="clear"> </div>
 
 
 

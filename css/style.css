@@ -278,6 +278,11 @@ body{
 	padding: 10px 0px;
 	border-bottom: 5px solid #ea4c89;
 }
+
+.text-populerity:hover{
+	color: red;
+}
+
 .featured-Videos img{
 	background: #EA5546;
 	padding: 2px;

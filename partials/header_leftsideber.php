@@ -28,7 +28,7 @@
             <div class="left-sidebar">
                 <div class="logo">
                     <a href="index.php"><img src="images/logo.png" title="logo" /></a>
-                    <h1>My blogging site</h1>
+                    <h1>News Portal</h1>
                     
                     <div class="user_login_icon">
                         <?php
@@ -58,9 +58,7 @@
 	                            <a href="registration/registration.php">Registration</a>
 	                        </div>
 	                    </span>
-                        
                     </div>
-            
                </div>
                 <div class="top-nav">
                     <ul>
