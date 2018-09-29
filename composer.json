@@ -1,6 +1,6 @@
 {
     "require": {
         "nesbot/carbon": "~1.21",
-        "samayo/bulletproof": "^3.2"
+        "samayo/bulletproof": "^3.2",
     }
 }
